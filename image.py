@@ -9,19 +9,13 @@ print(flask.__version__)
 def myimages():
     req = request
 
-
-
     if req == None:
         print('The request is null')
     else:
         print(req.data)
-    response = {"image": req.data}
-    # response_pickled = jsonpickle.encode(response)
-    message = {
-        "value": "Kuda"
-    }
+    response = {"values": req.data}
 
-    return jsonify(msg=req.data)
+    return jsonify(values=response)
 
 
 @app.route('/api/users', methods=['GET'])
